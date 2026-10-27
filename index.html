@@ -14,14 +14,20 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
+    min-height: 100vh;
+    padding: 20px 12px;
     background: linear-gradient(180deg, #eef2f5 0%, #e3e9ef 100%);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                  Roboto, Arial, sans-serif;
     color: #222;
-    min-height: 100vh;
-    padding: 24px 14px;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
@@ -31,14 +37,14 @@ body {
 }
 
 .post {
+    width: 100%;
     background: #fff;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 10px 35px rgba(15, 23, 42, 0.10);
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.09);
 }
 
 .cover {
-    position: relative;
     width: 100%;
     background: #111827;
     overflow: hidden;
@@ -48,49 +54,49 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 470px;
-    object-fit: contain;
 }
 
 .content {
-    padding: 20px 18px 18px;
+    padding: 20px 14px 18px;
 }
 
 .title {
+    margin: 0 0 6px;
+    color: #172033;
     font-size: 21px;
     line-height: 1.4;
     font-weight: 800;
-    color: #172033;
     text-align: center;
-    margin-bottom: 7px;
 }
 
 .subtitle {
-    font-size: 14px;
-    line-height: 1.6;
+    margin: 0 0 16px;
     color: #697386;
+    font-size: 14px;
+    line-height: 1.5;
     text-align: center;
-    margin-bottom: 18px;
 }
 
-/* Native banner advertisement */
+/* Native banner container */
 .banner-ad {
+    display: block;
     width: 100%;
-    min-height: 50px;
-    margin: 0 auto 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
+    margin: 0 auto 16px;
+    padding: 0;
     text-align: center;
     overflow: hidden;
-    border-radius: 10px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
 }
 
-/* Button layout */
+/* Buttons */
 .button-list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    width: 100%;
 }
 
 .link {
@@ -98,24 +104,29 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 54px;
-    padding: 14px 12px;
-    border-radius: 12px;
-    text-decoration: none;
+    min-height: 52px;
+    padding: 13px 10px;
+    border: 0;
+    border-radius: 11px;
+    color: #fff;
     text-align: center;
-    font-size: 15px;
+    text-decoration: none;
+    font-size: 14px;
     line-height: 1.4;
     font-weight: 800;
-    letter-spacing: 0.3px;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.10);
-    transition: transform 0.18s ease, filter 0.18s ease;
+    letter-spacing: 0.2px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+    transition: filter 0.15s ease, transform 0.15s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
+.link:hover {
+    filter: brightness(1.06);
+}
+
 .link:active {
-    transform: scale(0.98);
-    filter: brightness(0.94);
+    transform: scale(0.985);
+    filter: brightness(0.95);
 }
 
 .video-button {
@@ -131,22 +142,22 @@ body {
 }
 
 .footer {
-    margin-top: 20px;
-    padding-top: 14px;
+    margin-top: 18px;
+    padding-top: 13px;
     border-top: 1px solid #edf0f4;
+    color: #8992a2;
     font-size: 12px;
     line-height: 1.6;
     text-align: center;
-    color: #8992a2;
 }
 
 @media (max-width: 360px) {
     body {
-        padding: 15px 10px;
+        padding: 12px 8px;
     }
 
     .content {
-        padding: 16px 13px;
+        padding: 17px 12px 15px;
     }
 
     .title {
@@ -154,8 +165,8 @@ body {
     }
 
     .link {
-        font-size: 14px;
-        min-height: 50px;
+        min-height: 49px;
+        font-size: 13px;
     }
 }
 
@@ -181,15 +192,13 @@ body {
 
         <div class="content">
 
-            <h1 class="title">
-                🎥 Video
-            </h1>
+            <h1 class="title">🎥 Video</h1>
 
             <p class="subtitle">
                 Choose an option below 👇
             </p>
 
-            <!-- Native Banner: above the buttons -->
+            <!-- Native Banner Ad -->
             <div class="banner-ad">
                 <script
                     data-cfasync="false"
@@ -199,6 +208,7 @@ body {
                 </script>
             </div>
 
+            <!-- Navigation buttons -->
             <div class="button-list">
 
                 <a
@@ -238,10 +248,12 @@ body {
 <!-- Histats Counter -->
 <script type="text/javascript">
 var _Hasync = _Hasync || [];
+
 _Hasync.push([
     'Histats.start',
     '1,5058180,4,9,110,60,00011111'
 ]);
+
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 
